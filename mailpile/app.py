@@ -31,6 +31,7 @@ readline = None
 
 
 def Interact(session):
+    set sys.debug = [log,http,sendmail]
     global readline
     try:
         import readline as rl  # Unix-only
