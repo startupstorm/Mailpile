@@ -31,7 +31,6 @@ readline = None
 
 
 def Interact(session):
-    set sys.debug = [log,http,sendmail]
     global readline
     try:
         import readline as rl  # Unix-only
@@ -132,6 +131,8 @@ class WaitCommand(Command):
 
 
 def Main(args):
+    #Turn Debugging on
+    set sys.debug = [log,http,sendmail]
     # Bootstrap translations until we've loaded everything else
     mailpile.i18n.ActivateTranslation(None, ConfigManager, None)
     try:
